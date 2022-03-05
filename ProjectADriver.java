@@ -11,7 +11,7 @@ public class ProjectADriver {
 		list = new ArrayFrontBackCappedList<Integer>(10);
 		
 		if(testingExtraCredit) {
-			list = new ListFrontBackCappedList<Integer>(10);
+			list = new ArrayFrontBackCappedList<Integer>(10);
 			System.out.println("-----------------------------DRIVER BEING RUN WITH EXTRA CREDIT CLASS-----------------------------");
 		}
 	
@@ -315,7 +315,7 @@ public class ProjectADriver {
 		System.out.println("\n-----------------------------TESTING WITH STRINGS-----------------------------");
 		FrontBackCappedListInterface<String> wordList = new ArrayFrontBackCappedList<String>(20);
 		if(testingExtraCredit) {
-			wordList = new ListFrontBackCappedList<String>(20);
+			wordList = new ArrayFrontBackCappedList<String>(20);
 		}
 		testAdd(wordList, AddRemovePosition.FRONT, new String[] {"job!", "Nice", "it!", "did", "You"}, true, "test with Strings");
 		testAdd(wordList, AddRemovePosition.BACK, new String[] {"You", "rock!"}, true, "test with Strings");

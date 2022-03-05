@@ -12,7 +12,7 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
     }
 
     public ArrayFrontBackCappedList(int capacity) {
-        if(initialized ==false) {
+        if(initialized ==false) {   //FIXME: note - can simplify the false statement as !initialized
             T[] tempList = (T[]) new Comparable[capacity + 1];
             list = tempList;
             this.capacity = capacity;
@@ -54,7 +54,14 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public T getEntry(int givenPosition) {
-        return null;
+
+        if ((givenPosition < 0) && (givenPosition >= numberOfEntries)) {  //Checks if index is in valid range:
+            return null;
+        } else {
+//            T[] someList = (T[]) new Object[givenPosition];
+            T[] someList = (T[]) list[givenPosition];
+            return (T) someList;
+        }
     }
 
     @Override
@@ -74,16 +81,16 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public int size() {
-        return 0;
+        return numberOfEntries;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return numberOfEntries == 0;
     }
 
     @Override
     public boolean isFull() {
-        return false;
+        return numberOfEntries >= capacity;
     }
 }
