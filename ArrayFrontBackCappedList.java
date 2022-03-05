@@ -49,9 +49,9 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public void clear() {
-        for (int index = 0; index <= numberOfEntries; index++) {
-            list[index] = null;
-        }
+        T[] tempList = (T[]) new ArrayFrontBackCappedList<?>[0];
+        list = tempList;
+        numberOfEntries = 0;
     }
 
     @Override
