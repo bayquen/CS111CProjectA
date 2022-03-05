@@ -49,16 +49,17 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public void clear() {
-
+        for (int index = 0; index <= numberOfEntries; index++) {
+            list[index] = null;
+        }
     }
 
     @Override
     public T getEntry(int givenPosition) {
 
-        if ((givenPosition < 0) && (givenPosition >= numberOfEntries)) {  //Checks if index is in valid range:
+        if ((givenPosition < 0) && (givenPosition >= numberOfEntries)) {  //Checks if index is in valid range
             return null;
         } else {
-//            T[] someList = (T[]) new Object[givenPosition];
             T[] someList = (T[]) list[givenPosition];
             return (T) someList;
         }
