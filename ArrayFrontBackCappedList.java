@@ -55,13 +55,12 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
     }
 
     @Override
-    public T getEntry(int givenPosition) {
+    public T getEntry(int givenPosition) { //FIXME: PART 1 METHOD TO BE DONE
 
-        if ((givenPosition < 0) && (givenPosition >= numberOfEntries)) {  //Checks if index is in valid range
-            return null;
+        if (initialized && (givenPosition >= 0) && (givenPosition <= numberOfEntries)) {  //Checks if index is in valid range
+            return (T) this.list[givenPosition];
         } else {
-            T[] someList = (T[]) list[givenPosition];
-            return (T) someList;
+            return null;
         }
     }
 
