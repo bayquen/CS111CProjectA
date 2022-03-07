@@ -23,8 +23,14 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public String toString() {
-        return "Size=" + numberOfEntries +"; " +
-                "capacity=" + capacity + "; " + Arrays.toString(list) ;
+        String aString = "[";
+        for (int i = 0; i < numberOfEntries; i++) {
+            aString += list[i] + " ";
+        }
+
+        aString += "]";
+        return "Size=" + numberOfEntries + "; " +
+                "capacity=" + capacity + "; " + aString;
     }
 
     @Override
@@ -49,9 +55,9 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public void clear() {
-        T[] tempList = (T[]) new ArrayFrontBackCappedList<?>[0];
-        list = tempList;
+        T[] tempList = (T[]) new ArrayFrontBackCappedList<?>[capacity];
         numberOfEntries = 0;
+        list = tempList;
     }
 
     @Override
