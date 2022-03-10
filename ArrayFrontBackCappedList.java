@@ -12,7 +12,7 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
     }
 
     public ArrayFrontBackCappedList(int capacity) {
-        if(initialized ==false) {   //FIXME: note - can simplify the false statement as !initialized
+        if(!initialized) {   //FIXME: note - can simplify the false statement as !initialized \\fixed by juan 3/9/22
             T[] tempList = (T[]) new Comparable[capacity + 1];
             list = tempList;
             this.capacity = capacity;
@@ -38,19 +38,33 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
         return false;
     }
 
-    @Override
-    public boolean addBack(T newEntry) {
-        return false;
-    }
 
     @Override
     public T removeFront() {
-        return null;
+      T removedItem = list[0];
+      if (!isEmpty()){
+        list[0] = null;
+        for (int i = 1; i <=numberOfEntries; i++){
+          list[i] = list[i - 1];
+          }
+        numberOfEntries--;
+        return removedItem;
+      }
+     else { return null;
+       }
+      }
     }
 
     @Override
-    public T removeBack() {
-        return null;
+        public T removeBack() {
+      T removedItem = list[numberOfEntries - 1];
+      if (!isEmpty()){
+        list[numberOfEntries] = null;
+        numberOfEntries--;
+        return removedItem;
+      }
+        else {return null;
+          }
     }
 
     @Override
