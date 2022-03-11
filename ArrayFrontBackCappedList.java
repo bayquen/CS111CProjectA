@@ -25,7 +25,9 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
     public String toString() {
         String aString = "[";
         for (int i = 0; i < numberOfEntries; i++) {
-            aString += list[i] + " ";
+            if(i!=numberOfEntries-1){
+            aString += list[i] + ", ";}
+            else{aString += list[i];}
         }
 
         aString += "]";
@@ -95,7 +97,7 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
     }
 
     @Override
-    public T getEntry(int givenPosition) { //FIXME: PART 1 METHOD TO BE DONE
+    public T getEntry(int givenPosition) {
 
         if (initialized && (givenPosition >= 0) && (givenPosition <= numberOfEntries)) {  //Checks if index is in valid range
             return (T) this.list[givenPosition];
