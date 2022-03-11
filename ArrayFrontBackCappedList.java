@@ -60,31 +60,30 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 	         return false;
     } 
 
-    @Override
+  @Override
     public T removeFront() {
-      T removedItem = list[0];
-      if (!isEmpty()){
-        list[0] = null;
-        for (int i = 1; i <=numberOfEntries; i++){
-          list[i] = list[i - 1];
-          }
-        numberOfEntries--;
-        return removedItem;
-      }
-     else { return null;
-       }
-      }
-    
+        T removedItem = list[0];
+        if (!isEmpty()){
+            for (int i = 0; i <=numberOfEntries-1; i++){
+                list[i] = list[i +1];
+            }
+            numberOfEntries--;
+            return removedItem;
+        }
+        else { return null;
+        }
+    }
 
     @Override
         public T removeBack() {
-      T removedItem = list[numberOfEntries];
+      T removedItem = null;
       if (!isEmpty()){
-        list[numberOfEntries] = null;
+        removedItem = list[numberOfEntries-1];
+        list[numberOfEntries -1] = null;
         numberOfEntries--;
         return removedItem;
       }
-        else {return null;
+        else {return removedItem;
           }
     }
 
