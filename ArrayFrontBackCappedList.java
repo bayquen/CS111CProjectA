@@ -107,13 +107,24 @@ public class ArrayFrontBackCappedList<T> implements FrontBackCappedListInterface
 
     @Override
     public int indexOf(T anEntry) {
-        return 0;
+        for (int index = 0; index < numberOfEntries; index++) {
+            if (anEntry.equals(list[index])) {
+                return index;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(T anEntry) {
-        return 0;
+        for (int index = numberOfEntries - 1; index >= 0; index--) {
+            if (anEntry.equals(list[index])) {
+                return index;
+            }
+        }
+        return -1;
     }
+
 
     @Override
     public boolean contains(T anEntry) {
