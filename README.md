@@ -12,14 +12,18 @@ You are given an interface for a type of list. The list works like this:
 
 Write a class that implements this interface. The class uses arrays to implement the list.
 
+## Project's Main Files:
+-  **_FrontBackCappedListInterface.java_**: The pre-made Java interface we will be implementing.
+-  **_ArrayFrontBackCappedList.java_**: The class program to implement the interface. [COMPLETE]
+-  **_ProjectADriver.java_**: Pre-made driver program for testing all our required class methods.
 ## Class Requirements: Part One
-Your class should have all of the following. I recommend working on these methods listed in Part One first. The provided tester file relies heavily on these methods to run. So you should write and test these methods first. There is information in the section below and commented out in the tester file about how you can test these methods.
+[Professor's note:] Your class should have all of the following. I recommend working on these methods listed in Part One first. The provided tester file relies heavily on these methods to run. So you should write and test these methods first. There is information in the section below and commented out in the tester file about how you can test these methods.
 
 ### (3 points) constructor(int)
 the parameter specifies the maximum size (i.e., capacity) that the list can be
 ### (4 points) String toString()
 -  the output must contain the size, the capacity (max size), and a display of all elements in the list (see the driver program for the format of the text representation- your display must match this format!)
--  Note: I strongly recommend writing the toString method right after the constructor because the tester will be much less useful without this method written!
+-  [Professor's] note: I strongly recommend writing the toString method right after the constructor because the tester will be much less useful without this method written!
 ### (2 points) boolean isEmpty()
 ### (2 points) boolean isFull()
 ### (1 points) int size()
